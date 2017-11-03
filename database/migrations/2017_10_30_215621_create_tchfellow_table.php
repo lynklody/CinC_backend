@@ -15,6 +15,12 @@ class CreateTchfellowTable extends Migration
     {
         Schema::create('tchfellow', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('account_id');
+            $table->string('faculty_name');
+            $table->string('title');
+            $table->string('description');
+            $table->string('questions');
+            $table->string('answer');
             $table->timestamps();
         });
     }

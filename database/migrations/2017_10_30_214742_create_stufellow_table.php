@@ -15,6 +15,12 @@ class CreateStufellowTable extends Migration
     {
         Schema::create('stufellow', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('account_id');
+            $table->string('student_name');
+            $table->string('title');
+            $table->string('description');
+            $table->string('questions');
+            $table->string('answer');
             $table->timestamps();
         });
     }

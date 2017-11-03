@@ -15,6 +15,13 @@ class CreateTravelProjectTable extends Migration
     {
         Schema::create('travel-project', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('description');
+            $table->date('time');
+            $table->string('location');
+            $table->string('majors');
+            $table->string('host_organization');
+            $table->integer('fee');
             $table->timestamps();
         });
     }

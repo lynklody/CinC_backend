@@ -14,7 +14,14 @@ class CreateOTLoginTable extends Migration
     public function up()
     {
         Schema::create('OT-login', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('account_id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('password');
+            $table->string('company/institution');
+            $table->string('action');
+            $table->date('action_time');
             $table->timestamps();
         });
     }

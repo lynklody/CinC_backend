@@ -14,7 +14,15 @@ class CreateNonOTLoginTable extends Migration
     public function up()
     {
         Schema::create('non-OT-login', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('account_id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('password');
+            $table->string('department/major');
+            $table->date('graduation_year');
+            $table->string('priority');
+            $table->string('action');
+            $table->date('action_time');
             $table->timestamps();
         });
     }

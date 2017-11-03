@@ -15,6 +15,12 @@ class CreateEventFeedTable extends Migration
     {
         Schema::create('eventFeed', function (Blueprint $table) {
             $table->increments('id');
+            $table->time('post_time');
+            $table->string('category');
+            $table->string('title');
+            $table->string('content');
+            $table->boolean('for_student');
+            $table->boolean('for_faculty');
             $table->timestamps();
         });
     }
