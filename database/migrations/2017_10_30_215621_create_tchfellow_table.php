@@ -15,7 +15,7 @@ class CreateTchfellowTable extends Migration
     {
         Schema::create('tchfellow', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('account_id');
+            $table->integer('account_id')->unsigned();
             $table->string('faculty_name');
             $table->string('title');
             $table->string('description');

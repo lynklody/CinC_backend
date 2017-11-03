@@ -21,7 +21,7 @@ class CreateTravelProjectTable extends Migration
             $table->string('location');
             $table->string('majors');
             $table->string('host_organization');
-            $table->integer('fee');
+            $table->integer('fee')->unsigned();
             $table->timestamps();
         });
     }
