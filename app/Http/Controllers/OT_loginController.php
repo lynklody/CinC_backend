@@ -14,7 +14,9 @@ class OT_loginController extends Controller
      */
     public function index()
     {
-        //
+        $ot_logins = OT_login::orderBy('id', 'asc')->get();
+        error_log($ot_logins);
+        return $ot_logins;
     }
 
     /**
@@ -44,9 +46,10 @@ class OT_loginController extends Controller
      * @param  \App\OT_login  $oT_login
      * @return \Illuminate\Http\Response
      */
-    public function show(OT_login $oT_login)
+    public function show($id)
     {
-        //
+        $ot_login = OT_login::find($id);
+        return $ot_login;
     }
 
     /**
@@ -78,8 +81,10 @@ class OT_loginController extends Controller
      * @param  \App\OT_login  $oT_login
      * @return \Illuminate\Http\Response
      */
-    public function destroy(OT_login $oT_login)
+    public function destroy($id)
     {
-        //
+        $ot_login = OT_login::find($id);
+        $ot_login->delete();
+        return 'success';
     }
 }

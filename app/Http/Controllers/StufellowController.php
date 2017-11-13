@@ -14,7 +14,9 @@ class StufellowController extends Controller
      */
     public function index()
     {
-        //
+        $stufellows = Stufellow::orderBy('id', 'asc')->get();
+        error_log($stufellows);
+        return $stufellows;
     }
 
     /**
@@ -44,9 +46,10 @@ class StufellowController extends Controller
      * @param  \App\Stufellow  $stufellow
      * @return \Illuminate\Http\Response
      */
-    public function show(Stufellow $stufellow)
+    public function show($id)
     {
-        //
+        $stufellow = Stufellow::find($id);
+        return $stufellow;
     }
 
     /**
@@ -78,8 +81,10 @@ class StufellowController extends Controller
      * @param  \App\Stufellow  $stufellow
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Stufellow $stufellow)
+    public function destroy($id)
     {
-        //
+        $stufellow = Stufellow::find($id);
+        $stufellow->delete();
+        return 'success';
     }
 }
