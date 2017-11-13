@@ -14,7 +14,9 @@ class TchfellowController extends Controller
      */
     public function index()
     {
-        //
+        $tchfellows = Tchfellow::orderBy('id', 'asc')->get();
+        error_log($tchfellows);
+        return $tchfellows;
     }
 
     /**
@@ -44,9 +46,10 @@ class TchfellowController extends Controller
      * @param  \App\Tchfellow  $tchfellow
      * @return \Illuminate\Http\Response
      */
-    public function show(Tchfellow $tchfellow)
+    public function show($id)
     {
-        //
+        $tchfellow = Tchfellow::find($id);
+        return $tchfellow;
     }
 
     /**
@@ -78,8 +81,10 @@ class TchfellowController extends Controller
      * @param  \App\Tchfellow  $tchfellow
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tchfellow $tchfellow)
+    public function destroy($id)
     {
-        //
+        $tchfellow = Tchfellow::find($id);
+        $tchfellow->delete();
+        return 'success';
     }
 }

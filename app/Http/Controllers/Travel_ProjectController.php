@@ -14,7 +14,9 @@ class Travel_ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $travel_projects = Travel_Project::orderBy('id', 'asc')->get();
+        error_log($travel_projects);
+        return $travel_projects;
     }
 
     /**
@@ -44,9 +46,10 @@ class Travel_ProjectController extends Controller
      * @param  \App\Travel_Project  $travel_Project
      * @return \Illuminate\Http\Response
      */
-    public function show(Travel_Project $travel_Project)
+    public function show($id)
     {
-        //
+        $travel_project = Travel_Project::find($id);
+        return $travel_project;
     }
 
     /**
@@ -78,8 +81,10 @@ class Travel_ProjectController extends Controller
      * @param  \App\Travel_Project  $travel_Project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Travel_Project $travel_Project)
+    public function destroy($id)
     {
-        //
+        $travel_project = Travel_Project::find($id);
+        $travel_project->delete();
+        return 'success';
     }
 }
