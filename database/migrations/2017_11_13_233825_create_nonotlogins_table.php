@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOTLoginTable extends Migration
+class CreateNonotloginsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateOTLoginTable extends Migration
      */
     public function up()
     {
-        Schema::create('OT-login', function (Blueprint $table) {
+        Schema::create('nonotlogins', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('account_id')->unsigned();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email');
             $table->string('password');
-            $table->string('company/institution');
-            $table->string('action');
+            $table->string('department/major');
+            $table->integer('graduation_year');
+            $table->text('action');
             $table->date('action_time');
             $table->timestamps();
         });
@@ -33,6 +34,6 @@ class CreateOTLoginTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('OT-login');
+        Schema::dropIfExists('nonotlogins');
     }
 }

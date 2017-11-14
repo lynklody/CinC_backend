@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStufellowTable extends Migration
+class CreateJobinternsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateStufellowTable extends Migration
      */
     public function up()
     {
-        Schema::create('stufellow', function (Blueprint $table) {
+        Schema::create('jobinterns', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('account_id')->unsigned();
-            $table->string('student_name');
             $table->string('title');
-            $table->string('description');
-            $table->string('questions');
-            $table->string('answer');
+            $table->text('job_description');
+            $table->text('requirements');
+            $table->date('time_posted');
+            $table->string('employer');
+            $table->text('employer_description');
+            $table->string('majors');
             $table->timestamps();
         });
     }
@@ -32,6 +33,6 @@ class CreateStufellowTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stufellow');
+        Schema::dropIfExists('jobinterns');
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Stufellow;
+use App\Otlogins;
 use Illuminate\Http\Request;
 
-class StufellowController extends Controller
+class OtloginsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class StufellowController extends Controller
      */
     public function index()
     {
-        $stufellows = Stufellow::orderBy('id', 'asc')->get();
-        error_log($stufellows);
-        return $stufellows;
+        $otlogins = otlogins::orderBy('id', 'asc')->get();
+        error_log($otlogins);
+        return $otlogins;
     }
 
     /**
@@ -43,22 +43,22 @@ class StufellowController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Stufellow  $stufellow
+     * @param  \App\OT_login  $oT_login
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $stufellow = Stufellow::find($id);
-        return $stufellow;
+        $otlogins = otlogins::find($id);
+        return $otlogins;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Stufellow  $stufellow
+     * @param  \App\Otlogins  $otlogins
      * @return \Illuminate\Http\Response
      */
-    public function edit(Stufellow $stufellow)
+    public function edit(Otlogins $otlogins)
     {
         //
     }
@@ -67,10 +67,10 @@ class StufellowController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Stufellow  $stufellow
+     * @param  \App\Otlogins  $otlogins
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Stufellow $stufellow)
+    public function update(Request $request, Otlogins $otlogins)
     {
         //
     }
@@ -78,13 +78,11 @@ class StufellowController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Stufellow  $stufellow
+     * @param  \App\Otlogins  $otlogins
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Otlogins $otlogins)
     {
-        $stufellow = Stufellow::find($id);
-        $stufellow->delete();
-        return 'success';
+        //
     }
 }

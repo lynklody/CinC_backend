@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\non_OT_login;
+use App\Nonotlogins;
 use Illuminate\Http\Request;
 
-class non_OT_loginController extends Controller
+class NonotloginsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class non_OT_loginController extends Controller
      */
     public function index()
     {
-        //
+        $nonotlogins = Nonotlogins::orderBy('id')->get();
+        error_log($nonotlogins);
+        return $nonotlogins;
     }
 
     /**
@@ -41,21 +43,22 @@ class non_OT_loginController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\non_OT_login  $non_OT_login
+     * @param  \App\Nonotlogin  $nonotlogin
      * @return \Illuminate\Http\Response
      */
-    public function show(non_OT_login $non_OT_login)
+    public function show($id)
     {
-        //
+        $nonotlogins = Nonotlogins::find($id);
+        return $nonotlogins;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\non_OT_login  $non_OT_login
+     * @param  \App\Nonotlogins  $nonotlogins
      * @return \Illuminate\Http\Response
      */
-    public function edit(non_OT_login $non_OT_login)
+    public function edit(Nonotlogins $nonotlogins)
     {
         //
     }
@@ -64,10 +67,10 @@ class non_OT_loginController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\non_OT_login  $non_OT_login
+     * @param  \App\Nonotlogins  $nonotlogins
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, non_OT_login $non_OT_login)
+    public function update(Request $request, Nonotlogins $nonotlogins)
     {
         //
     }
@@ -75,10 +78,10 @@ class non_OT_loginController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\non_OT_login  $non_OT_login
+     * @param  \App\Nonotlogins  $nonotlogins
      * @return \Illuminate\Http\Response
      */
-    public function destroy(non_OT_login $non_OT_login)
+    public function destroy(Nonotlogins $nonotlogins)
     {
         //
     }

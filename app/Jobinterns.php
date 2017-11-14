@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Stufellow extends Model
+class Jobinterns extends Model
 {
     //
 }

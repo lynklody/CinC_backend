@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Travel_Project;
+use App\Stufellows;
 use Illuminate\Http\Request;
 
-class Travel_ProjectController extends Controller
+class StufellowsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class Travel_ProjectController extends Controller
      */
     public function index()
     {
-        $travel_projects = Travel_Project::orderBy('id', 'asc')->get();
-        error_log($travel_projects);
-        return $travel_projects;
+        $stufellows = Stufellows::orderBy('id')->get();
+        error_log($stufellows);
+        return $stufellows;
     }
 
     /**
@@ -43,22 +43,22 @@ class Travel_ProjectController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Travel_Project  $travel_Project
+     * @param  \App\Stufellow  $stufellow
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $travel_project = Travel_Project::find($id);
-        return $travel_project;
+        $stufellows = Stufellows::find($id);
+        return $stufellows;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Travel_Project  $travel_Project
+     * @param  \App\Stufellows  $stufellows
      * @return \Illuminate\Http\Response
      */
-    public function edit(Travel_Project $travel_Project)
+    public function edit(Stufellows $stufellows)
     {
         //
     }
@@ -67,10 +67,10 @@ class Travel_ProjectController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Travel_Project  $travel_Project
+     * @param  \App\Stufellows  $stufellows
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Travel_Project $travel_Project)
+    public function update(Request $request, Stufellows $stufellows)
     {
         //
     }
@@ -78,13 +78,11 @@ class Travel_ProjectController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Travel_Project  $travel_Project
+     * @param  \App\Stufellows  $stufellows
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Stufellows $stufellows)
     {
-        $travel_project = Travel_Project::find($id);
-        $travel_project->delete();
-        return 'success';
+        //
     }
 }

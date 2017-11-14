@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Tchfellow extends Model
+class Eventfeeds extends Model
 {
     //
 }

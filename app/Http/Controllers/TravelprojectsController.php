@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\EventFeed;
+use App\Travelprojects;
 use Illuminate\Http\Request;
 
-class EventFeedController extends Controller
+class TravelprojectsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class EventFeedController extends Controller
      */
     public function index()
     {
-        //
+        $travelprojects = Travelprojects::orderBy('id', 'asc')->get();
+        error_log($travelprojects);
+        return $travelprojects;
     }
 
     /**
@@ -41,21 +43,22 @@ class EventFeedController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\EventFeed  $eventFeed
+     * @param  \App\Travel_Project  $travel_Project
      * @return \Illuminate\Http\Response
      */
-    public function show(EventFeed $eventFeed)
+    public function show($id)
     {
-        //
+        $travelprojects = Travelprojects::find($id);
+        return $travelprojects;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\EventFeed  $eventFeed
+     * @param  \App\Travelprojects  $travelprojects
      * @return \Illuminate\Http\Response
      */
-    public function edit(EventFeed $eventFeed)
+    public function edit(Travelprojects $travelprojects)
     {
         //
     }
@@ -64,10 +67,10 @@ class EventFeedController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\EventFeed  $eventFeed
+     * @param  \App\Travelprojects  $travelprojects
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, EventFeed $eventFeed)
+    public function update(Request $request, Travelprojects $travelprojects)
     {
         //
     }
@@ -75,10 +78,10 @@ class EventFeedController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\EventFeed  $eventFeed
+     * @param  \App\Travelprojects  $travelprojects
      * @return \Illuminate\Http\Response
      */
-    public function destroy(EventFeed $eventFeed)
+    public function destroy(Travelprojects $travelprojects)
     {
         //
     }
