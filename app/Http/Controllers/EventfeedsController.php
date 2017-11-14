@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Tchfellow;
+use App\Eventfeeds;
 use Illuminate\Http\Request;
 
-class TchfellowController extends Controller
+class EventfeedsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class TchfellowController extends Controller
      */
     public function index()
     {
-        $tchfellows = Tchfellow::orderBy('id', 'asc')->get();
-        error_log($tchfellows);
-        return $tchfellows;
+        $eventfeeds = Eventfeeds::orderBy('id')->get();
+        error_log($eventfeeds);
+        return $eventfeeds;
     }
 
     /**
@@ -43,22 +43,22 @@ class TchfellowController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tchfellow  $tchfellow
+     * @param  \App\EventFeed  $eventFeed
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $tchfellow = Tchfellow::find($id);
-        return $tchfellow;
+        $eventfeeds = Eventfeeds::find($id);
+        return $eventfeeds;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Tchfellow  $tchfellow
+     * @param  \App\Eventfeeds  $eventfeeds
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tchfellow $tchfellow)
+    public function edit(Eventfeeds $eventfeeds)
     {
         //
     }
@@ -67,10 +67,10 @@ class TchfellowController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tchfellow  $tchfellow
+     * @param  \App\Eventfeeds  $eventfeeds
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tchfellow $tchfellow)
+    public function update(Request $request, Eventfeeds $eventfeeds)
     {
         //
     }
@@ -78,13 +78,11 @@ class TchfellowController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tchfellow  $tchfellow
+     * @param  \App\Eventfeeds  $eventfeeds
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Eventfeeds $eventfeeds)
     {
-        $tchfellow = Tchfellow::find($id);
-        $tchfellow->delete();
-        return 'success';
+        //
     }
 }

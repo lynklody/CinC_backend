@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventFeedTable extends Migration
+class CreateStufellowsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateEventFeedTable extends Migration
      */
     public function up()
     {
-        Schema::create('eventFeed', function (Blueprint $table) {
+        Schema::create('stufellows', function (Blueprint $table) {
             $table->increments('id');
-            $table->time('post_time');
-            $table->string('category');
+            $table->integer('account_id')->unsigned();
+            $table->string('student_name');
             $table->string('title');
-            $table->string('content');
-            $table->boolean('for_student');
-            $table->boolean('for_faculty');
+            $table->text('description');
+            $table->text('questions');
+            $table->text('answer');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateEventFeedTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('eventFeed');
+        Schema::dropIfExists('stufellows');
     }
 }

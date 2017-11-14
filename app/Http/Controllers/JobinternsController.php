@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Job_Intern;
+use App\Jobinterns;
 use Illuminate\Http\Request;
 
-class Job_InternController extends Controller
+class JobinternsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,9 @@ class Job_InternController extends Controller
      */
     public function index()
     {
-        //
+        $jobinterns = Jobinterns::orderBy('id')->get();
+        error_log($jobinterns);
+        return $jobinterns;
     }
 
     /**
@@ -44,18 +46,19 @@ class Job_InternController extends Controller
      * @param  \App\Job_Intern  $job_Intern
      * @return \Illuminate\Http\Response
      */
-    public function show(Job_Intern $job_Intern)
+    public function show($id)
     {
-        //
+        $jobinterns = Jobinterns::find($id);
+        return $jobinterns;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Job_Intern  $job_Intern
+     * @param  \App\Jobinterns  $jobinterns
      * @return \Illuminate\Http\Response
      */
-    public function edit(Job_Intern $job_Intern)
+    public function edit(Jobinterns $jobinterns)
     {
         //
     }
@@ -64,10 +67,10 @@ class Job_InternController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Job_Intern  $job_Intern
+     * @param  \App\Jobinterns  $jobinterns
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job_Intern $job_Intern)
+    public function update(Request $request, Jobinterns $jobinterns)
     {
         //
     }
@@ -75,10 +78,10 @@ class Job_InternController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Job_Intern  $job_Intern
+     * @param  \App\Jobinterns  $jobinterns
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job_Intern $job_Intern)
+    public function destroy(Jobinterns $jobinterns)
     {
         //
     }

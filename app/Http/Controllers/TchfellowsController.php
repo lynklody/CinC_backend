@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\OT_login;
+use App\Tchfellows;
 use Illuminate\Http\Request;
 
-class OT_loginController extends Controller
+class TchfellowsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class OT_loginController extends Controller
      */
     public function index()
     {
-        $ot_logins = OT_login::orderBy('id', 'asc')->get();
-        error_log($ot_logins);
-        return $ot_logins;
+        $tchfellows = Tchfellows::orderBy('id', 'asc')->get();
+        error_log($tchfellows);
+        return $tchfellows;
     }
 
     /**
@@ -43,22 +43,22 @@ class OT_loginController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\OT_login  $oT_login
+     * @param  \App\Tchfellow  $tchfellow
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $ot_login = OT_login::find($id);
-        return $ot_login;
+        $tchfellows = Tchfellows::find($id);
+        return $tchfellows;
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\OT_login  $oT_login
+     * @param  \App\Tchfellows  $tchfellows
      * @return \Illuminate\Http\Response
      */
-    public function edit(OT_login $oT_login)
+    public function edit(Tchfellows $tchfellows)
     {
         //
     }
@@ -67,10 +67,10 @@ class OT_loginController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\OT_login  $oT_login
+     * @param  \App\Tchfellows  $tchfellows
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, OT_login $oT_login)
+    public function update(Request $request, Tchfellows $tchfellows)
     {
         //
     }
@@ -78,13 +78,11 @@ class OT_loginController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\OT_login  $oT_login
+     * @param  \App\Tchfellows  $tchfellows
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tchfellows $tchfellows)
     {
-        $ot_login = OT_login::find($id);
-        $ot_login->delete();
-        return 'success';
+        //
     }
 }

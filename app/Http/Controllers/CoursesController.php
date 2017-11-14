@@ -14,7 +14,9 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Courses::orderBy('id', 'desc')->get();
+        error_log($courses);
+        return $courses;
     }
 
     /**
@@ -44,9 +46,10 @@ class CoursesController extends Controller
      * @param  \App\Courses  $courses
      * @return \Illuminate\Http\Response
      */
-    public function show(Courses $courses)
+    public function show($id)
     {
-        //
+        $courses = Courses::find($id);
+        return $courses;
     }
 
     /**

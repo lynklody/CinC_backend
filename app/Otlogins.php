@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OT_login extends Model
+class Otlogins extends Model
 {
     //
 }
