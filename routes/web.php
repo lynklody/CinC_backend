@@ -61,3 +61,10 @@ Route::post('/otlogins/create', 'otloginsController@store');
 Route::get('/otlogins/{id}', 'otloginsController@show');
 Route::delete('/otlogins/{id}', 'otloginsController@destroy');
 Route::put('/otlogins/{id}', 'otloginsController@update');
+
+Route::get('/blogs', 'BlogsController@index');
+Route::post('/blogs/create', 'BlogsController@store');
+Route::get('/blogs/{id}', 'BlogsController@show');
+Route::delete('/blogs/{id}', 'BlogsController@destroy');
+Route::put('/blogs/{id}', 'BlogsController@update');
+//Route::get('/blogs/{id}',['uses'=>'BlogsController@index', 'as'=>'blogs.index']);

@@ -14,7 +14,7 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses = Courses::orderBy('id', 'desc')->get();
+        $courses = Courses::orderBy('id')->get();
         error_log($courses);
         return $courses;
     }
