@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobinterns;
+use App\Projects;
 use Illuminate\Http\Request;
 
-class JobinternsController extends Controller
+class ProjectsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class JobinternsController extends Controller
      */
     public function index()
     {
-        $jobinterns = Jobinterns::orderBy('id')->get();
-        error_log($jobinterns);
-        return $jobinterns;
+        //
     }
 
     /**
@@ -43,22 +41,21 @@ class JobinternsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Job_Intern  $job_Intern
+     * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Projects $projects)
     {
-        $jobinterns = Jobinterns::find($id);
-        return $jobinterns;
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Jobinterns  $jobinterns
+     * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jobinterns $jobinterns)
+    public function edit(Projects $projects)
     {
         //
     }
@@ -67,10 +64,10 @@ class JobinternsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Jobinterns  $jobinterns
+     * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jobinterns $jobinterns)
+    public function update(Request $request, Projects $projects)
     {
         //
     }
@@ -78,10 +75,10 @@ class JobinternsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Jobinterns  $jobinterns
+     * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jobinterns $jobinterns)
+    public function destroy(Projects $projects)
     {
         //
     }

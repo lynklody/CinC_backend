@@ -68,3 +68,13 @@ Route::get('/blogs/{id}', 'BlogsController@show');
 Route::delete('/blogs/{id}', 'BlogsController@destroy');
 Route::put('/blogs/{id}', 'BlogsController@update');
 //Route::get('/blogs/{id}',['uses'=>'BlogsController@index', 'as'=>'blogs.index']);
+
+Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
+Route::get('/logout', function() {
+    Auth::logout();
+    return Redirect::home();
+});

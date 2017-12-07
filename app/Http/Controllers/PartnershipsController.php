@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Travelprojects;
+use App\Partnerships;
 use Illuminate\Http\Request;
 
-class TravelprojectsController extends Controller
+class PartnershipsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,7 @@ class TravelprojectsController extends Controller
      */
     public function index()
     {
-        $travelprojects = Travelprojects::orderBy('id', 'asc')->get();
-        error_log($travelprojects);
-        return $travelprojects;
+        //
     }
 
     /**
@@ -43,22 +41,21 @@ class TravelprojectsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Travel_Project  $travel_Project
+     * @param  \App\Partnerships  $partnerships
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Partnerships $partnerships)
     {
-        $travelprojects = Travelprojects::find($id);
-        return $travelprojects;
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Travelprojects  $travelprojects
+     * @param  \App\Partnerships  $partnerships
      * @return \Illuminate\Http\Response
      */
-    public function edit(Travelprojects $travelprojects)
+    public function edit(Partnerships $partnerships)
     {
         //
     }
@@ -67,10 +64,10 @@ class TravelprojectsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Travelprojects  $travelprojects
+     * @param  \App\Partnerships  $partnerships
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Travelprojects $travelprojects)
+    public function update(Request $request, Partnerships $partnerships)
     {
         //
     }
@@ -78,10 +75,10 @@ class TravelprojectsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Travelprojects  $travelprojects
+     * @param  \App\Partnerships  $partnerships
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Travelprojects $travelprojects)
+    public function destroy(Partnerships $partnerships)
     {
         //
     }
