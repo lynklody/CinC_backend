@@ -14,9 +14,10 @@ class TravelsController extends Controller
      */
     public function index()
     {
-        //
+        $travels = Travels::orderBy('id')->get();
+        error_log($travels);
+        return $travels;
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -44,9 +45,10 @@ class TravelsController extends Controller
      * @param  \App\Travels  $travels
      * @return \Illuminate\Http\Response
      */
-    public function show(Travels $travels)
+    public function show($id)
     {
-        //
+        $travels = Travels::find($id);
+        return $travels;
     }
 
     /**
