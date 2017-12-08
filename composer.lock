@@ -48,7 +48,7 @@
                 },
                 "classmap": [
                     "tests"
-                ],
+                ]
     "content-hash": "17d0227f37d6127ac3abcebf54483758",
     "packages": [
         {

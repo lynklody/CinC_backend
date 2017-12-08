@@ -14,9 +14,7 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Projects::orderBy('id')->get();
-        error_log($projects);
-        return $projects;
+        //
     }
 
     /**
@@ -46,10 +44,9 @@ class ProjectsController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Projects $projects)
     {
-        $projects = Projects::find($id);
-        return $projects;
+        //
     }
 
     /**
