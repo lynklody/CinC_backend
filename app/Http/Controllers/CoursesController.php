@@ -37,7 +37,17 @@ class CoursesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $courses = new Courses;
+        $courses->course_id = request('course_id');
+        $courses->description = request('description');
+        $courses->department = request('department'); 
+        $courses->prof_name = request('prof_name');
+        $courses->prerequisites = "none";
+        $courses->credits = 4;
+        error_log($courses);
+        $courses->save();
+        return redirect('/courses');
     }
 
     /**
