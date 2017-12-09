@@ -87,6 +87,12 @@ Route::get('/travels/{id}', 'TravelsController@show');
 Route::delete('/travels/{id}', 'TravelsController@destroy');
 Route::put('/travels/{id}', 'TravelsController@update');
 
+Route::get('/stuexperiences', 'StuexperiencesController@index');
+Route::post('/stuexperiences/create', 'StuexperiencesController@store');
+Route::get('/stuexperiences/{id}', 'StuexperiencesController@show');
+Route::delete('/stuexperiences/{id}', 'StuexperiencesController@destroy');
+Route::put('/stuexperiences/{id}', 'StuexperiencesController@update');
+
 Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
 Auth::routes();
 
