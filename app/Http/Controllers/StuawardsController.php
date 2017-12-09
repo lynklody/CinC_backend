@@ -13,10 +13,11 @@ class StuawardsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
-
+     {
+        $stuawards = Stuawards::orderBy('id')->get();
+        error_log($stuawards);
+        return $stuawards;
+      }
     /**
      * Show the form for creating a new resource.
      *
@@ -44,9 +45,10 @@ class StuawardsController extends Controller
      * @param  \App\Stuawards  $stuawards
      * @return \Illuminate\Http\Response
      */
-    public function show(Stuawards $stuawards)
+    public function show($id)
     {
-        //
+        $stuawards = Stuawards::find($id);
+        return $stuawards;
     }
 
     /**

@@ -13,9 +13,11 @@ class FaclexperiencesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
+     {
+        $faclexperiences = Faclexperiences::orderBy('id')->get();
+        error_log($faclexperiences);
+        return $faclexperiences;
+      }
 
     /**
      * Show the form for creating a new resource.
@@ -44,9 +46,10 @@ class FaclexperiencesController extends Controller
      * @param  \App\Faclexperiences  $faclexperiences
      * @return \Illuminate\Http\Response
      */
-    public function show(Faclexperiences $faclexperiences)
+    public function show($id)
     {
-        //
+        $faclexperiences = Faclexperiences::find($id);
+        return $faclexperiences;
     }
 
     /**

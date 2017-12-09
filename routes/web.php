@@ -93,6 +93,25 @@ Route::get('/stuexperiences/{id}', 'StuexperiencesController@show');
 Route::delete('/stuexperiences/{id}', 'StuexperiencesController@destroy');
 Route::put('/stuexperiences/{id}', 'StuexperiencesController@update');
 
+Route::get('/stuexperiences', 'StuexperiencesController@index');
+Route::post('/stuexperiences/create', 'StuexperiencesController@store');
+Route::get('/stuexperiences/{id}', 'StuexperiencesController@show');
+Route::delete('/stuexperiences/{id}', 'StuexperiencesController@destroy');
+Route::put('/stuexperiences/{id}', 'StuexperiencesController@update');
+
+Route::get('/stuawards', 'StuawardsController@index');
+Route::post('/stuawards/create', 'StuawardsController@store');
+Route::get('/stuawards/{id}', 'StuawardsController@show');
+Route::delete('/stuawards/{id}', 'StuawardsController@destroy');
+Route::put('/stuawards/{id}', 'StuawardsController@update');
+
+Route::get('/faclexperiences', 'FaclexperiencesController@index');
+Route::post('/faclexperiences/create', 'FaclexperiencesController@store');
+Route::get('/faclexperiences/{id}', 'FaclexperiencesController@show');
+Route::delete('/faclexperiences/{id}', 'FaclexperiencesController@destroy');
+Route::put('/faclexperiences/{id}', 'FaclexperiencesController@update');
+
+
 Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
 Auth::routes();
 
