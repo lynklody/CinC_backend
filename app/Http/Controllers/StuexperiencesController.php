@@ -13,9 +13,12 @@ class StuexperiencesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
+     {
+        $stuexperiences = Stuexperiences::orderBy('id')->get();
+        error_log($stuexperiences);
+        return $stuexperiences;
+      }
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,11 +47,11 @@ class StuexperiencesController extends Controller
      * @param  \App\Stuexperiences  $stuexperiences
      * @return \Illuminate\Http\Response
      */
-    public function show(Stuexperiences $stuexperiences)
+    public function show($id)
     {
-        //
+        $stuexperiences = Stuexperiences::find($id);
+        return $stuexperiences;
     }
-
     /**
      * Show the form for editing the specified resource.
      *

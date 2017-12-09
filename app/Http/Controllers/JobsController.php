@@ -13,9 +13,11 @@ class JobsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
+     {
+        $jobs = Jobs::orderBy('id')->get();
+        error_log($jobs);
+        return $jobs;
+      }
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +37,16 @@ class JobsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $jobs = new Jobs;
+        $jobs->title = request('title');
+        $jobs->job_description = request('description');
+        $jobs->requirements = request('requirements'); 
+        $jobs->employer = request('employer');
+        $jobs->employer_description = request('employerDesc');
+        $jobs->majors = request('majors');
+        error_log($jobs);
+        $jobs->save();
+        return redirect('/jobs');
     }
 
     /**
@@ -44,11 +55,11 @@ class JobsController extends Controller
      * @param  \App\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function show(Jobs $jobs)
+    public function show($id)
     {
-        //
+        $jobs = Jobs::find($id);
+        return $jobs;
     }
-
     /**
      * Show the form for editing the specified resource.
      *

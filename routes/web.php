@@ -39,7 +39,7 @@ Route::delete('/tchfellows/{id}', 'tchfellowsController@destroy');
 Route::put('/tchfellows/{id}', 'tchfellowsController@update');
 
 Route::get('/jobinterns', 'jobinternsController@index');
-Route::post('jobinterns/create', 'jobinternsController@store');
+Route::post('/jobinterns/create', 'jobinternsController@store');
 Route::get('/jobinterns/{id}', 'jobinternsController@show');
 Route::delete('/jobinterns/{id}', 'jobinternsController@destroy');
 Route::put('/jobinterns/{id}', 'jobinternsController@update');
@@ -68,6 +68,49 @@ Route::get('/blogs/{id}', 'BlogsController@show');
 Route::delete('/blogs/{id}', 'BlogsController@destroy');
 Route::put('/blogs/{id}', 'BlogsController@update');
 //Route::get('/blogs/{id}',['uses'=>'BlogsController@index', 'as'=>'blogs.index']);
+
+Route::get('/jobs', 'JobsController@index');
+Route::post('/jobs/create', 'JobsController@store');
+Route::get('/jobs/{id}', 'JobsController@show');
+Route::delete('/jobs/{id}', 'JobsController@destroy');
+Route::put('/jobs/{id}', 'JobsController@update');
+
+Route::get('/projects', 'ProjectsController@index');
+Route::post('/projects/create', 'ProjectsController@store');
+Route::get('/projects/{id}', 'ProjectsController@show');
+Route::delete('/projects/{id}', 'ProjectsController@destroy');
+Route::put('/projects/{id}', 'ProjectsController@update');
+
+Route::get('/travels', 'TravelsController@index');
+Route::post('/travels/create', 'TravelsController@store');
+Route::get('/travels/{id}', 'TravelsController@show');
+Route::delete('/travels/{id}', 'TravelsController@destroy');
+Route::put('/travels/{id}', 'TravelsController@update');
+
+Route::get('/stuexperiences', 'StuexperiencesController@index');
+Route::post('/stuexperiences/create', 'StuexperiencesController@store');
+Route::get('/stuexperiences/{id}', 'StuexperiencesController@show');
+Route::delete('/stuexperiences/{id}', 'StuexperiencesController@destroy');
+Route::put('/stuexperiences/{id}', 'StuexperiencesController@update');
+
+Route::get('/stuexperiences', 'StuexperiencesController@index');
+Route::post('/stuexperiences/create', 'StuexperiencesController@store');
+Route::get('/stuexperiences/{id}', 'StuexperiencesController@show');
+Route::delete('/stuexperiences/{id}', 'StuexperiencesController@destroy');
+Route::put('/stuexperiences/{id}', 'StuexperiencesController@update');
+
+Route::get('/stuawards', 'StuawardsController@index');
+Route::post('/stuawards/create', 'StuawardsController@store');
+Route::get('/stuawards/{id}', 'StuawardsController@show');
+Route::delete('/stuawards/{id}', 'StuawardsController@destroy');
+Route::put('/stuawards/{id}', 'StuawardsController@update');
+
+Route::get('/faclexperiences', 'FaclexperiencesController@index');
+Route::post('/faclexperiences/create', 'FaclexperiencesController@store');
+Route::get('/faclexperiences/{id}', 'FaclexperiencesController@show');
+Route::delete('/faclexperiences/{id}', 'FaclexperiencesController@destroy');
+Route::put('/faclexperiences/{id}', 'FaclexperiencesController@update');
+
 
 
 Route::get('/', ['as' => 'home', 'uses' => 'IndexController@index']);
