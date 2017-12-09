@@ -167,7 +167,8 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Auth0\Login\LoginServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -176,7 +177,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        // Auth0\Login\LoginServiceProvider::class,
+
         
 
     ],
@@ -227,7 +228,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        //'Auth0' => Auth0\Login\Facade\Auth0::class
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Auth0' => Auth0\Login\Facade\Auth0::class
     ],
 
 ];
