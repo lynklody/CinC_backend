@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "304c1aa6ac1c4a4fe1fc7e2c7d861451",
+    "content-hash": "a4ebe20e063a9a5f3c38cee360e62c95",
     "packages": [
         {
             "name": "auth0/auth0-php",
