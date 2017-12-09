@@ -10,7 +10,7 @@ return array(
     |
     */
 
-    // 'domain'        => 'XXXX.auth0.com',
+     'domain'        => getenv('AUTH0_DOMAIN'),
     /*
     |--------------------------------------------------------------------------
     |   Your APP id
@@ -19,7 +19,7 @@ return array(
     |
     */
 
-    // 'client_id'     => 'XXXX',
+     'client_id'     => getenv('AUTH0_CLIENT_ID'),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return array(
     |   As set in the auth0 administration page
     |
     */
-    // 'client_secret' => 'XXXXX',
+     'client_secret' => getenv('AUTH0_CLIENT_SECRET'),
 
    /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return array(
     |
     */
 
-    // 'redirect_uri'  => 'http://<host>/auth0/callback'
+     'redirect_uri'  => getenv('AUTH0_CALLBACK_URL'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,9 +51,9 @@ return array(
     |
     */
 
-    // 'persist_user' => true,
-    // 'persist_access_token' => true,
-    // 'persist_id_token' => true,
+     'persist_user' => true,
+     'persist_access_token' => true,
+     'persist_id_token' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -62,7 +62,7 @@ return array(
     |   This is used to verify the decoded tokens when using RS256
     |
     */
-    // 'authorized_issuers'  => [ 'https://XXXX.auth0.com/' ],
+     //'authorized_issuers'  => [ 'https://csc342test.auth0.com/' ],
 
     /*
     |--------------------------------------------------------------------------
@@ -70,7 +70,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     */
-    // 'api_identifier'  => '',
+     //'api_identifier'  => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -79,7 +79,7 @@ return array(
     |   Used to know if it should decode the secret when using HS256
     |
     */
-    // 'secret_base64_encoded'  => true,
+     //'secret_base64_encoded'  => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -88,6 +88,7 @@ return array(
     |   Algs supported by your API
     |
     */
-    // 'suported_algs'        => ['HS256'],
+     //'suported_algs' => ['HS256']
 
 );
+

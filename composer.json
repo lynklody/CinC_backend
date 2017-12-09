@@ -17,7 +17,8 @@
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "~1.0",
         "phpunit/phpunit": "~6.0",
-        "nesbot/carbon": "~1.18"
+        "nesbot/carbon": "~1.18",
+        "zizaco/entrust": "5.2.x-dev"
     },
     "autoload": {
         "classmap": [

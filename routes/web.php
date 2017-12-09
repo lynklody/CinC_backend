@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 Route::get('/courses', 'CoursesController@index');
 Route::post('/courses/create', 'CoursesController@store');
 Route::get('/courses/{id}', 'CoursesController@show');
@@ -69,12 +69,10 @@ Route::delete('/blogs/{id}', 'BlogsController@destroy');
 Route::put('/blogs/{id}', 'BlogsController@update');
 //Route::get('/blogs/{id}',['uses'=>'BlogsController@index', 'as'=>'blogs.index']);
 
-Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
-Route::get('/logout', function() {
-    Auth::logout();
-    return Redirect::home();
-});
+Route::get('/', ['as' => 'home', 'uses' => 'IndexController@index']);
+
+Route::get('/login', ['as' => 'login', 'uses' => 'IndexController@login']);
+Route::get('/logout', ['as' => 'logout', 'uses' => 'IndexController@logout'])->middleware('auth');
+Route::get('/dump', ['as' => 'dump', 'uses' => 'IndexController@dump', 'middleware' => 'auth'])->middleware('auth');
+Route::get('/auth0/callback', ['as' => 'logincallback', 'uses' => '\Auth0\Login\Auth0Controller@callback']);
