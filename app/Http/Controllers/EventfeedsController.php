@@ -37,7 +37,17 @@ class EventfeedsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $eventfeeds = new Eventfeeds;
+        $eventfeeds->title = request('title');
+        $eventfeeds->content = request('description');
+        $eventfeeds->date = request('date'); 
+        $eventfeeds->location = request('location');
+        $eventfeeds->start_time = request('start_time');
+        $eventfeeds->end_time = request('end_time');
+        error_log($eventfeeds);
+        $eventfeeds->save();
+        return redirect('/eventfeeds');
     }
 
     /**
