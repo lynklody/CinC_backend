@@ -36,7 +36,15 @@ class PartnershipsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $partnerships = new Partnerships;
+        $partnerships->title = request('title');
+        $partnerships->description = request('description');
+        $partnerships->org = request('org');
+
+        error_log($partnerships);
+        $partnerships->save();
+        return redirect('/partnerships');
     }
 
     /**

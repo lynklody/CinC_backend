@@ -38,7 +38,17 @@ class StuexperiencesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $stuexperiences = new Stuexperiences;
+        $stuexperiences->title = request('title');
+        $stuexperiences->description = request('description');
+        $stuexperiences->grade = request('grade'); 
+        $stuexperiences->stu_name = request('stu_name');
+        $stuexperiences->major = request('major');
+
+        error_log($stuexperiences);
+        $stuexperiences->save();
+        return redirect('/stuexperiences');
     }
 
     /**

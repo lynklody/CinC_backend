@@ -36,7 +36,16 @@ class TravelsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $travels = new Travels;
+        $travels->title = request('title');
+        $travels->description = request('description');
+        $travels->host_organization	 = request('host_org'); 
+        $travels->location = request('location');
+        $travels->majors = request('majors');
+
+        error_log($travels);
+        $travels->save();
+        return redirect('/travels');
     }
 
     /**

@@ -37,7 +37,15 @@ class FaclscholarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $faclscholars = new Faclscholars;
+        $faclscholars->title = request('title');
+        $faclscholars->description = request('description');
+        $faclscholars->fac_name = request('fac_name');
+        $faclscholars->department = request('department');
+        error_log($faclscholars);
+        $faclscholars->save();
+        return redirect('/faclscholars');
     }
 
     /**

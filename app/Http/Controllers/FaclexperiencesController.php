@@ -37,7 +37,15 @@ class FaclexperiencesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $faclexperiences = new Faclexperiences;
+        $faclexperiences->title = request('title');
+        $faclexperiences->description = request('description');
+        $faclexperiences->fac_name = request('fac_name');
+
+        error_log($faclexperiences);
+        $faclexperiences->save();
+        return redirect('/faclexperiences');
     }
 
     /**
