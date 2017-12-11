@@ -14,9 +14,10 @@ class PartnershipsController extends Controller
      */
     public function index()
     {
-        //
+        $partnerships = Partnerships::orderBy('id')->get();
+        error_log($partnerships);
+        return $partnerships;
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -44,9 +45,10 @@ class PartnershipsController extends Controller
      * @param  \App\Partnerships  $partnerships
      * @return \Illuminate\Http\Response
      */
-    public function show(Partnerships $partnerships)
+    public function show($id)
     {
-        //
+        $partnerships = Partnerships::find($id);
+        return $partnerships;
     }
 
     /**
