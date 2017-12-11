@@ -139,3 +139,5 @@ Route::get('/auth0/callback', ['as' => 'logincallback', 'uses' => '\Auth0\Login\
     Auth::logout();
     return redirect() ->away('http://cs.furman.edu/~eloftus/cinc/#');
 });*/
+
+Route::get('/myCinc', 'DashboardController@dump');

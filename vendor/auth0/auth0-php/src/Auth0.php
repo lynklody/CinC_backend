@@ -123,6 +123,7 @@ class Auth0 {
   * @var string
   */
   protected $user;
+
   /**
   * Authentication Client.
   *
