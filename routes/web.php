@@ -126,7 +126,7 @@ Route::put('/partnerships/{id}', 'PartnershipsController@update');
 Route::get('/', ['as' => 'home', 'uses' => 'IndexController@index']);
 
 //Route::get('/login', ['as' => 'login', 'uses' => 'IndexController@login']);
-//Route::get('/logout', ['as' => 'logout', 'uses' => 'IndexController@logout'])->middleware('auth');
+Route::get('/logout', ['as' => 'logout', 'uses' => 'IndexController@logout'])->middleware('auth');
 Route::get('/dump', ['as' => 'dump', 'uses' => 'IndexController@dump', 'middleware' => 'auth'])->middleware('auth');
 Route::get('/auth0/callback', ['as' => 'logincallback', 'uses' => '\Auth0\Login\Auth0Controller@callback']);
 
@@ -135,7 +135,7 @@ Route::get('/login', function() {
     return redirect() ->away('http://cs.furman.edu/~eloftus/cinc/#/myCinc');
 });
 
-Route::get('/logout', function() {
+/*Route::get('/logout', function() {
     Auth::logout();
     return redirect() ->away('http://cs.furman.edu/~eloftus/cinc/#');
-});
+});*/
