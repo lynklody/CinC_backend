@@ -13,9 +13,11 @@ class FaclscholarsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-    }
+     {
+        $faclscholars = Faclscholars::orderBy('id')->get();
+        error_log($faclscholars);
+        return $faclscholars;
+      }
 
     /**
      * Show the form for creating a new resource.
@@ -44,11 +46,11 @@ class FaclscholarsController extends Controller
      * @param  \App\Faclscholars  $faclscholars
      * @return \Illuminate\Http\Response
      */
-    public function show(Faclscholars $faclscholars)
+    public function show($id)
     {
-        //
+        $faclscholars = Faclscholars::find($id);
+        return $faclscholars;
     }
-
     /**
      * Show the form for editing the specified resource.
      *

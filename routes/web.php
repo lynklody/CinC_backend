@@ -111,7 +111,17 @@ Route::get('/faclexperiences/{id}', 'FaclexperiencesController@show');
 Route::delete('/faclexperiences/{id}', 'FaclexperiencesController@destroy');
 Route::put('/faclexperiences/{id}', 'FaclexperiencesController@update');
 
+Route::get('/faclscholars', 'FaclscholarsController@index');
+Route::post('/faclscholars/create', 'FaclscholarsController@store');
+Route::get('/faclscholars/{id}', 'FaclscholarsController@show');
+Route::delete('/faclscholars/{id}', 'FaclscholarsController@destroy');
+Route::put('/faclscholars/{id}', 'FaclscholarsController@update');
 
+Route::get('/partnerships', 'PartnershipsController@index');
+Route::post('/partnerships/create', 'PartnershipsController@store');
+Route::get('/partnerships/{id}', 'PartnershipsController@show');
+Route::delete('/partnerships/{id}', 'PartnershipsController@destroy');
+Route::put('/partnerships/{id}', 'PartnershipsController@update');
 
 Route::get('/', ['as' => 'home', 'uses' => 'IndexController@index']);
 
