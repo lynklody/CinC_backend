@@ -89,7 +89,7 @@
 
         function signin() {
             lock.show({
-                callbackURL: 'http://localhost:8000/auth0/callback'
+                callbackURL: 'http://phplaravel-124529-356307.cloudwaysapps.com//auth0/callback'
                 , responseType: 'code'
                 , authParams: {
                     scope: 'openid email'  // Learn about scopes: https://auth0.com/docs/scopes
