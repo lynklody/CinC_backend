@@ -40,11 +40,8 @@ class BlogsController extends Controller
         $blogs = new Blogs;
         $blogs->id;
         $blogs->author = request('author');
-        $blogs->time = request('date');
         $blogs->title = request('title');
-        $blogs->body = request('desc');
-        $blogs->body = nl2br($blogs->body);
-        $blogs->url = url('/blogs/{$blogs->$id}');
+        $blogs->body = request('description');
 
         error_log($blogs);
 
