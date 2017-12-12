@@ -36,7 +36,17 @@ class StuawardsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $stuawards = new Stuawards;
+        $stuawards->title = request('title');
+        $stuawards->description = request('description');
+        $stuawards->grade = request('grade'); 
+        $stuawards->stu_name = request('stu_name');
+        $stuawards->major = request('major');
+
+        error_log($stuawards);
+        $stuawards->save();
+        return redirect('/stuawards');
     }
 
     /**

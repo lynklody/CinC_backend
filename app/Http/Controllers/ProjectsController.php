@@ -38,8 +38,19 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $projects = new Projects;
+        $projects->title = request('title');
+        $projects->description = request('description');
+        $projects->department = request('department'); 
+        $projects->prof_name = request('prof_name');
+        $projects->majors = request('majors');
+
+        error_log($projects);
+        $projects->save();
+        return redirect('/projects');
     }
+
 
     /**
      * Display the specified resource.
