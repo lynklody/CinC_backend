@@ -11,9 +11,18 @@ class StatusController extends Controller
     $status = \Auth::check();
     if(null != $status) {
         $isLoggedIn = '1';
-    } ELSE {
+    } else {
         $isLoggedIn = '0';
     };
     return $isLoggedIn;
+    }
+
+    public function userInfo() {
+        if (checkStates != '0') {
+            $email = \Auth::user() -> email;
+            //$id = \Auth::user()->decode(id_token); 
+        } else {
+            echo("user undefined");
+        }
     }
 }
