@@ -2,7 +2,7 @@
 
 $origfilename = $_FILES['app']['name'];
 $tempfilename = $_FILES['app']['tmp_name'];
-$newfiliename = "/public_html/internApps/" . $origfilename;
+$newfiliename = "/internApps/" . $origfilename;
 $success = move_uploaded_file($tempfilename, $newfilename);
 if(!success) {
     echo "copy failed";
