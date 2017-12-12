@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 class DashboardController extends Controller
 {
-
+  protected $userInfo;
+  
   public function __construct()
   {
 
@@ -20,9 +21,12 @@ class DashboardController extends Controller
   public function dump()
   {
     $isLoggedIn = \Auth::check();
+    $userInfo = "login denied";
     //$userEmail = \User::getUserInfo()find::($email);
-    $user = \App::make('auth0')->getUser();
-    $userInfo = $this->getUserByUserInfo($user);
+    if ($isLoggedIn) {
+      $user = \App::make('auth0')->getUser();
+      $userInfo = $this->getUserByUserInfo($user);
+    }
     return $userInfo;
       /*
       return view('dump')
