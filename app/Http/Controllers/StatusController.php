@@ -21,6 +21,7 @@ class StatusController extends Controller
         $status = \Auth::check();
         if(null != $status) {
             $email = \Auth::user() -> email;
+            echo('success');
             //$id = \Auth::user()->decode(id_token); 
         } else {
             echo("user undefined");
