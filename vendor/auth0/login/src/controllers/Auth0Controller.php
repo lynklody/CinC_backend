@@ -49,6 +49,7 @@ class Auth0Controller extends Controller
             \Auth::login($user, $service->rememberUser());
         }
 
+        //return redirect() ->away('http://cs.furman.edu/~eloftus/cinc/#/myCinc');
         return \Redirect::intended('/');
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class IndexController extends Controller
+class DashboardController extends Controller
 {
 
   public function __construct()
@@ -17,21 +17,10 @@ class IndexController extends Controller
       ->with('isLoggedIn', $isLoggedIn);
   }
 
-  public function login()
-  {
-    return \App::make('auth0')->login(null, null, ['scope' => 'openid profile email'], 'code');
-  }
-
-  public function logout()
-  {
-    \Auth::logout();
-    return redirect() -> away('http://cs.furman.edu/~eloftus/cinc/#/');
-    //return  \Redirect::intended('/');
-  }
-
   public function dump()
   {
     $isLoggedIn = \Auth::check();
+    //$userEmail = \User::getUserInfo()find::($email);
     return view('dump')
       ->with('isLoggedIn', $isLoggedIn)
       ->with('user',\Auth::user()->getUserInfo())
