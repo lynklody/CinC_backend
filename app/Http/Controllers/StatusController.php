@@ -18,7 +18,7 @@ class StatusController extends Controller
     }
 
     public function userInfo() {
-        if (checkStates != '0') {
+        if (checkStatus() != '0') {
             $email = \Auth::user() -> email;
             //$id = \Auth::user()->decode(id_token); 
         } else {
