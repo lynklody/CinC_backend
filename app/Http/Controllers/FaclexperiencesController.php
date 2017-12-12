@@ -68,7 +68,15 @@ class FaclexperiencesController extends Controller
      */
     public function edit(Faclexperiences $faclexperiences)
     {
-        //
+        
+        $faclexperiences = Faclexperiences::find($id);
+        $faclexperiences->title = request('title');
+        $faclexperiences->description = request('description');
+        $faclexperiences->fac_name = request('fac_name');
+
+        error_log($faclexperiences);
+        $faclexperiences->save();
+        return redirect('/faclexperiences');
     }
 
     /**
@@ -89,8 +97,10 @@ class FaclexperiencesController extends Controller
      * @param  \App\Faclexperiences  $faclexperiences
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faclexperiences $faclexperiences)
+    public function destroy($id)
     {
-        //
+        $faclexperiences = Faclexperiences::find($id);
+        $faclexperiences->delete();
+        return 'success';
     }
 }

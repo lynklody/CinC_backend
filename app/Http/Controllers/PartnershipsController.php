@@ -88,8 +88,10 @@ class PartnershipsController extends Controller
      * @param  \App\Partnerships  $partnerships
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Partnerships $partnerships)
+    public function destroy($id)
     {
-        //
+        $partnerships = Partnerships::find($id);
+        $partnerships->delete();
+        return 'success';
     }
 }

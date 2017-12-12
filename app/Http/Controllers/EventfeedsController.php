@@ -70,8 +70,18 @@ class EventfeedsController extends Controller
      */
     public function edit(Eventfeeds $eventfeeds)
     {
-        //
+        $eventfeeds = Eventfeeds::find($id);
+        $eventfeeds->title = request('title');
+        $eventfeeds->content = request('description');
+        $eventfeeds->date = request('date'); 
+        $eventfeeds->location = request('location');
+        $eventfeeds->start_time = request('start_time');
+        $eventfeeds->end_time = request('end_time');
+        error_log($eventfeeds);
+        $eventfeeds->save();
+        return redirect('/eventfeeds');
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -91,8 +101,10 @@ class EventfeedsController extends Controller
      * @param  \App\Eventfeeds  $eventfeeds
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Eventfeeds $eventfeeds)
+    public function destroy($id)
     {
-        //
+        $eventfeeds = Eventfeeds::find($id);
+        $eventfeeds->delete();
+        return 'success';
     }
 }
