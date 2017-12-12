@@ -21,9 +21,15 @@ class DashboardController extends Controller
   {
     $isLoggedIn = \Auth::check();
     //$userEmail = \User::getUserInfo()find::($email);
-    return view('dump')
+    $user = \App::make('auth0')->getUser();
+    $userInfo = $this->getUserByUserInfo($user);
+    return $userInfo;
+      /*
+      return view('dump')
       ->with('isLoggedIn', $isLoggedIn)
       ->with('user',\Auth::user()->getUserInfo())
       ->with('accessToken',\Auth::user()->getAuthPassword());
-  }
+  */
+    }
+
 }
