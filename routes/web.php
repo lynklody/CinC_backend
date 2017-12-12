@@ -143,3 +143,4 @@ Route::get('/auth0/callback', ['as' => 'logincallback', 'uses' => '\Auth0\Login\
 
 Route::get('/myCinc', 'DashboardController@getInfo');
 Route::get('/status','StatusController@checkStatus');
+Route::get('/email','StatusController@userInfo');
