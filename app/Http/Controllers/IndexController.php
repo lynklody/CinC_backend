@@ -25,7 +25,7 @@ class IndexController extends Controller
   public function logout()
   {
     \Auth::logout();
-    return redirect() -> away('http://cs.furman.edu/~eloftus/cinc/#/')
+    return redirect() -> away('http://cs.furman.edu/~eloftus/cinc/#/');
     //return  \Redirect::intended('/');
   }
 
