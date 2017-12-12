@@ -10,10 +10,10 @@ class StatusController extends Controller
     public function checkStatus(){
     $status = \Auth::check();
     if(null != $status) {
-        $isLoggedIn = true;
+        $isLoggedIn = '1';
     } ELSE {
-        $isLoggedIn = false;
+        $isLoggedIn = '0';
     };
     return $isLoggedIn;
-}
+    }
 }
