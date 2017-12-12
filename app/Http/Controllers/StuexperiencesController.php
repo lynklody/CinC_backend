@@ -82,7 +82,15 @@ class StuexperiencesController extends Controller
      */
     public function update(Request $request, Stuexperiences $stuexperiences)
     {
-        //
+        $stuexperiences = new Stuexperiences;
+        $stuexperiences->title = request('title');
+        $stuexperiences->description = request('description');
+        $stuexperiences->grade = request('grade'); 
+        $stuexperiences->stu_name = request('stu_name');
+        $stuexperiences->major = request('major');
+
+        $stuexperiences->save();
+        return redirect('success');
     }
 
     /**
@@ -91,8 +99,10 @@ class StuexperiencesController extends Controller
      * @param  \App\Stuexperiences  $stuexperiences
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Stuexperiences $stuexperiences)
+    public function destroy($id)
     {
-        //
+        $stuexperiences = $Stuexperiences::find($id);
+        $stuexperiences->delete();
+        return 'success';
     }
 }
