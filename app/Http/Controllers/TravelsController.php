@@ -79,17 +79,26 @@ class TravelsController extends Controller
      */
     public function update(Request $request, Travels $travels)
     {
-        //
-    }
+        $travels = Travels::find($id);
+        $travels->title = request('title');
+        $travels->description = request('description');
+        $travels->host_organization	 = request('host_org'); 
+        $travels->location = request('location');
+        $travels->majors = request('majors');
 
+        $travels->save();
+        return 'success';
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Travels  $travels
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Travels $travels)
+    public function destroy($id)
     {
-        //
+        $travels = $Travels::find($id);
+        $travels->delete();
+        return 'success';
     }
 }

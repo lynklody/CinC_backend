@@ -70,7 +70,6 @@ class JobsController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -80,7 +79,14 @@ class JobsController extends Controller
      */
     public function update(Request $request, Jobs $jobs)
     {
-        //
+        $jobs->title = request('title');
+        $jobs->job_description = request('description');
+        $jobs->requirements = request('requirements'); 
+        $jobs->employer = request('employer');
+        $jobs->employer_description = request('employerDesc');
+        $jobs->majors = request('majors');
+        $jobs->save();
+        return 'success';
     }
 
     /**

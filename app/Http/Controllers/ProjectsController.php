@@ -73,7 +73,6 @@ class ProjectsController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -83,7 +82,15 @@ class ProjectsController extends Controller
      */
     public function update(Request $request, Projects $projects)
     {
-        //
+        $projects = Projects::find($id);
+        $projects->title = request('title');
+        $projects->description = request('description');
+        $projects->department = request('department'); 
+        $projects->prof_name = request('prof_name');
+        $projects->majors = request('majors');
+
+        error_log($projects);
+        return 'success';
     }
 
     /**
@@ -92,8 +99,10 @@ class ProjectsController extends Controller
      * @param  \App\Projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Projects $projects)
+    public function destroy($id)
     {
-        //
+        $projects = Projects::find($id);
+        $projects->delete();
+        return 'success';
     }
 }

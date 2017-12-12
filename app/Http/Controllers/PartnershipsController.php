@@ -69,7 +69,6 @@ class PartnershipsController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -79,7 +78,13 @@ class PartnershipsController extends Controller
      */
     public function update(Request $request, Partnerships $partnerships)
     {
-        //
+        $partnerships = Partnerships::find($id);
+        $partnerships = new Partnerships;
+        $partnerships->title = request('title');
+        $partnerships->description = request('description');
+        $partnerships->org = request('org');
+        $partnerships->save();
+        return 'success';
     }
 
     /**

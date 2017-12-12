@@ -81,7 +81,15 @@ class StuawardsController extends Controller
      */
     public function update(Request $request, Stuawards $stuawards)
     {
-        //
+        $stuawards = Stuawards::find($id);
+        $stuawards->title = request('title');
+        $stuawards->description = request('description');
+        $stuawards->grade = request('grade'); 
+        $stuawards->stu_name = request('stu_name');
+        $stuawards->major = request('major');
+
+        $stuawards->save();
+        return redirect('success');
     }
 
     /**
@@ -90,8 +98,10 @@ class StuawardsController extends Controller
      * @param  \App\Stuawards  $stuawards
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Stuawards $stuawards)
+    public function destroy(S$id)
     {
-        //
+        $stuawards = $Stuawards::find($id);
+        $stuawards->delete();
+        return 'success';
     }
 }
