@@ -20,6 +20,7 @@ class DashboardController extends Controller
   public function dump()
   {
     $isLoggedIn = \Auth::check();
+    //$userEmail = \User::getUserInfo()find::($email);
     return view('dump')
       ->with('isLoggedIn', $isLoggedIn)
       ->with('user',\Auth::user()->getUserInfo())
