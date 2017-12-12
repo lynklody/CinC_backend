@@ -140,4 +140,8 @@ Route::get('/auth0/callback', ['as' => 'logincallback', 'uses' => '\Auth0\Login\
     return redirect() ->away('http://cs.furman.edu/~eloftus/cinc/#');
 });*/
 
+<<<<<<< HEAD
 Route::get('/myCinc', 'DashboardController');
+=======
+Route::get('/myCinc', 'DashboardController@dump');
+>>>>>>> parent of 9e73f84... Auto stash before merge of "master" and "CinC_backend/master"
