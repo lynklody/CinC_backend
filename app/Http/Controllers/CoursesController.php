@@ -70,9 +70,14 @@ class CoursesController extends Controller
      */
     public function edit(Courses $courses)
     {
-        //
-    }
-
+        $courses = Courses::find($id);
+        $courses->course_id = request('course_id');
+        $courses->description = request('description');
+        $courses->department = request('department'); 
+        $courses->prof_name = request('prof_name');
+        $courses->save();
+        return 'success';
+   }
     /**
      * Update the specified resource in storage.
      *
@@ -91,8 +96,10 @@ class CoursesController extends Controller
      * @param  \App\Courses  $courses
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Courses $courses)
+    public function destroy($id)
     {
-        //
+        $courses = Courses::find($id);
+        $courses->delete();
+        return 'success';
     }
 }

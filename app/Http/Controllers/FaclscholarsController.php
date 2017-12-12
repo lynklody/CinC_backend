@@ -67,7 +67,14 @@ class FaclscholarsController extends Controller
      */
     public function edit(Faclscholars $faclscholars)
     {
-        //
+        $faclscholars = Faclscholars::find($id);
+        $faclscholars->title = request('title');
+        $faclscholars->description = request('description');
+        $faclscholars->fac_name = request('fac_name');
+        $faclscholars->department = request('department');
+        error_log($faclscholars);
+        $faclscholars->save();
+        return redirect('/faclscholars');
     }
 
     /**
@@ -88,8 +95,10 @@ class FaclscholarsController extends Controller
      * @param  \App\Faclscholars  $faclscholars
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faclscholars $faclscholars)
+    public function destroy($id)
     {
-        //
+        $faclscholars = Faclscholars::find($id);
+        $faclscholars->delete();
+        return 'success';
     }
 }

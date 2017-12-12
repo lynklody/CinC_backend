@@ -78,8 +78,10 @@ class InternsController extends Controller
      * @param  \App\Interns  $interns
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Interns $interns)
+    public function destroy($id)
     {
-        //
+        $interns = Interns::find($id);
+        $interns->delete();
+        return 'success';
     }
 }

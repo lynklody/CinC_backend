@@ -89,8 +89,10 @@ class JobsController extends Controller
      * @param  \App\Jobs  $jobs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jobs $jobs)
+    public function destroy($id)
     {
-        //
+        $jobs = Jobs::find($id);
+        $jobs->delete();
+        return 'success';
     }
 }
