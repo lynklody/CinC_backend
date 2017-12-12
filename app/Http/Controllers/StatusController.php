@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth;
 class StatusController extends Controller
 {
     public function checkStatus(){
-    $Status = \Auth::check();
+    $status = \Auth::check();
     if(null != $status) {
         $isLoggedIn = true;
     } ELSE {
